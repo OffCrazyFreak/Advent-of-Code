@@ -1,3 +1,5 @@
+package t1;
+
 import java.util.*;
 
 /**
@@ -5,9 +7,7 @@ import java.util.*;
  * that they've brought with them, one item per line.
  * Each Elf separates their own inventory from the previous Elf's inventory (if any) by a blank line.
  *
- * 1) Find the Elf carrying the most Calories. How many total Calories is that Elf carrying?
- *
- * 2) Find the top three Elves carrying the most Calories. How many Calories are those Elves carrying in total?
+ * Find the Elf carrying the most Calories. How many total Calories is that Elf carrying?
  */
 
 public class Main {
@@ -40,6 +40,5 @@ public class Main {
         List<Integer> sortedValues = caloriesSumMap.entrySet().stream().sorted(Map.Entry.<Integer, Integer>comparingByValue().reversed()).limit(3).map(Map.Entry::getValue).toList();
 
         System.out.println("Top 1: " + sortedValues.get(0));
-        System.out.println("Sum of top 3: " + (sortedValues.get(0) + sortedValues.get(1) + sortedValues.get(2)));
     }
 }
